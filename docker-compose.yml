@@ -1,0 +1,15 @@
+version: '3.3'
+services:    
+    srv_time:
+        build: 
+            context: ./
+            
+            dockerfile: ./srv_time/Dockerfile
+        ports:
+            - "50000:50000"
+    srv_reader:
+        build: 
+            context: ./
+            dockerfile: ./srv_reader/Dockerfile
+        depends_on: 
+            - srv_time

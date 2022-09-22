@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message EmptyMessage{}
+
+message PingRetrieveTimeResponse{
+    string ack = 1;
+}
+
+service RetrieveTime{
+    rpc PingRetrieveTime(EmptyMessage) returns (PingRetrieveTimeResponse);
+}
