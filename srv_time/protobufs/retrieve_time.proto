@@ -6,6 +6,20 @@ message PingRetrieveTimeResponse{
     string ack = 1;
 }
 
+message RetrieveTimeResponse{
+    double time = 1;
+}
+
+message RetrieveTimezoneRequest{
+    string timezone = 1;
+}
+message RetrieveTimezoneResponse{
+    string timezone = 1;
+    string timeData = 2;
+    double currentTime = 3;
+}
 service RetrieveTime{
     rpc PingRetrieveTime(EmptyMessage) returns (PingRetrieveTimeResponse);
+    rpc SendRetrieveTime(EmptyMessage) returns (RetrieveTimeResponse);
+    rpc SendRetrieveTimeTimezone(RetrieveTimezoneRequest) returns (RetrieveTimezoneResponse);
 }

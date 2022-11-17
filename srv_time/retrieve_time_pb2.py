@@ -14,12 +14,16 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13retrieve_time.proto\"\x0e\n\x0c\x45mptyMessage\"\'\n\x18PingRetrieveTimeResponse\x12\x0b\n\x03\x61\x63k\x18\x01 \x01(\t2L\n\x0cRetrieveTime\x12<\n\x10PingRetrieveTime\x12\r.EmptyMessage\x1a\x19.PingRetrieveTimeResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13retrieve_time.proto\"\x0e\n\x0c\x45mptyMessage\"\'\n\x18PingRetrieveTimeResponse\x12\x0b\n\x03\x61\x63k\x18\x01 \x01(\t\"*\n\x13RetrieveTimeRequest\x12\x13\n\x0b\x63urrentTime\x18\x01 \x01(\x01\"$\n\x14RetrieveTimeResponse\x12\x0c\n\x04time\x18\x01 \x01(\x01\"+\n\x17RetrieveTimezoneRequest\x12\x10\n\x08timezone\x18\x01 \x01(\t\"S\n\x18RetrieveTimezoneResponse\x12\x10\n\x08timezone\x18\x01 \x01(\t\x12\x10\n\x08timeData\x18\x02 \x01(\t\x12\x13\n\x0b\x63urrentTime\x18\x03 \x01(\x01\x32\xde\x01\n\x0cRetrieveTime\x12<\n\x10PingRetrieveTime\x12\r.EmptyMessage\x1a\x19.PingRetrieveTimeResponse\x12?\n\x10SendRetrieveTime\x12\x14.RetrieveTimeRequest\x1a\x15.RetrieveTimeResponse\x12O\n\x18SendRetrieveTimeTimezone\x12\x18.RetrieveTimezoneRequest\x1a\x19.RetrieveTimezoneResponseb\x06proto3')
 
 
 
 _EMPTYMESSAGE = DESCRIPTOR.message_types_by_name['EmptyMessage']
 _PINGRETRIEVETIMERESPONSE = DESCRIPTOR.message_types_by_name['PingRetrieveTimeResponse']
+_RETRIEVETIMEREQUEST = DESCRIPTOR.message_types_by_name['RetrieveTimeRequest']
+_RETRIEVETIMERESPONSE = DESCRIPTOR.message_types_by_name['RetrieveTimeResponse']
+_RETRIEVETIMEZONEREQUEST = DESCRIPTOR.message_types_by_name['RetrieveTimezoneRequest']
+_RETRIEVETIMEZONERESPONSE = DESCRIPTOR.message_types_by_name['RetrieveTimezoneResponse']
 EmptyMessage = _reflection.GeneratedProtocolMessageType('EmptyMessage', (_message.Message,), {
   'DESCRIPTOR' : _EMPTYMESSAGE,
   '__module__' : 'retrieve_time_pb2'
@@ -34,6 +38,34 @@ PingRetrieveTimeResponse = _reflection.GeneratedProtocolMessageType('PingRetriev
   })
 _sym_db.RegisterMessage(PingRetrieveTimeResponse)
 
+RetrieveTimeRequest = _reflection.GeneratedProtocolMessageType('RetrieveTimeRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RETRIEVETIMEREQUEST,
+  '__module__' : 'retrieve_time_pb2'
+  # @@protoc_insertion_point(class_scope:RetrieveTimeRequest)
+  })
+_sym_db.RegisterMessage(RetrieveTimeRequest)
+
+RetrieveTimeResponse = _reflection.GeneratedProtocolMessageType('RetrieveTimeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _RETRIEVETIMERESPONSE,
+  '__module__' : 'retrieve_time_pb2'
+  # @@protoc_insertion_point(class_scope:RetrieveTimeResponse)
+  })
+_sym_db.RegisterMessage(RetrieveTimeResponse)
+
+RetrieveTimezoneRequest = _reflection.GeneratedProtocolMessageType('RetrieveTimezoneRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RETRIEVETIMEZONEREQUEST,
+  '__module__' : 'retrieve_time_pb2'
+  # @@protoc_insertion_point(class_scope:RetrieveTimezoneRequest)
+  })
+_sym_db.RegisterMessage(RetrieveTimezoneRequest)
+
+RetrieveTimezoneResponse = _reflection.GeneratedProtocolMessageType('RetrieveTimezoneResponse', (_message.Message,), {
+  'DESCRIPTOR' : _RETRIEVETIMEZONERESPONSE,
+  '__module__' : 'retrieve_time_pb2'
+  # @@protoc_insertion_point(class_scope:RetrieveTimezoneResponse)
+  })
+_sym_db.RegisterMessage(RetrieveTimezoneResponse)
+
 _RETRIEVETIME = DESCRIPTOR.services_by_name['RetrieveTime']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -42,6 +74,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _EMPTYMESSAGE._serialized_end=37
   _PINGRETRIEVETIMERESPONSE._serialized_start=39
   _PINGRETRIEVETIMERESPONSE._serialized_end=78
-  _RETRIEVETIME._serialized_start=80
-  _RETRIEVETIME._serialized_end=156
+  _RETRIEVETIMEREQUEST._serialized_start=80
+  _RETRIEVETIMEREQUEST._serialized_end=122
+  _RETRIEVETIMERESPONSE._serialized_start=124
+  _RETRIEVETIMERESPONSE._serialized_end=160
+  _RETRIEVETIMEZONEREQUEST._serialized_start=162
+  _RETRIEVETIMEZONEREQUEST._serialized_end=205
+  _RETRIEVETIMEZONERESPONSE._serialized_start=207
+  _RETRIEVETIMEZONERESPONSE._serialized_end=290
+  _RETRIEVETIME._serialized_start=293
+  _RETRIEVETIME._serialized_end=515
 # @@protoc_insertion_point(module_scope)

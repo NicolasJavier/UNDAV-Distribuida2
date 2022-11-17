@@ -19,12 +19,34 @@ class RetrieveTimeStub(object):
                 request_serializer=retrieve__time__pb2.EmptyMessage.SerializeToString,
                 response_deserializer=retrieve__time__pb2.PingRetrieveTimeResponse.FromString,
                 )
+        self.SendRetrieveTime = channel.unary_unary(
+                '/RetrieveTime/SendRetrieveTime',
+                request_serializer=retrieve__time__pb2.RetrieveTimeRequest.SerializeToString,
+                response_deserializer=retrieve__time__pb2.RetrieveTimeResponse.FromString,
+                )
+        self.SendRetrieveTimeTimezone = channel.unary_unary(
+                '/RetrieveTime/SendRetrieveTimeTimezone',
+                request_serializer=retrieve__time__pb2.RetrieveTimezoneRequest.SerializeToString,
+                response_deserializer=retrieve__time__pb2.RetrieveTimezoneResponse.FromString,
+                )
 
 
 class RetrieveTimeServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def PingRetrieveTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SendRetrieveTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SendRetrieveTimeTimezone(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -37,6 +59,16 @@ def add_RetrieveTimeServicer_to_server(servicer, server):
                     servicer.PingRetrieveTime,
                     request_deserializer=retrieve__time__pb2.EmptyMessage.FromString,
                     response_serializer=retrieve__time__pb2.PingRetrieveTimeResponse.SerializeToString,
+            ),
+            'SendRetrieveTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendRetrieveTime,
+                    request_deserializer=retrieve__time__pb2.RetrieveTimeRequest.FromString,
+                    response_serializer=retrieve__time__pb2.RetrieveTimeResponse.SerializeToString,
+            ),
+            'SendRetrieveTimeTimezone': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendRetrieveTimeTimezone,
+                    request_deserializer=retrieve__time__pb2.RetrieveTimezoneRequest.FromString,
+                    response_serializer=retrieve__time__pb2.RetrieveTimezoneResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -62,5 +94,39 @@ class RetrieveTime(object):
         return grpc.experimental.unary_unary(request, target, '/RetrieveTime/PingRetrieveTime',
             retrieve__time__pb2.EmptyMessage.SerializeToString,
             retrieve__time__pb2.PingRetrieveTimeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SendRetrieveTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/RetrieveTime/SendRetrieveTime',
+            retrieve__time__pb2.RetrieveTimeRequest.SerializeToString,
+            retrieve__time__pb2.RetrieveTimeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SendRetrieveTimeTimezone(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/RetrieveTime/SendRetrieveTimeTimezone',
+            retrieve__time__pb2.RetrieveTimezoneRequest.SerializeToString,
+            retrieve__time__pb2.RetrieveTimezoneResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

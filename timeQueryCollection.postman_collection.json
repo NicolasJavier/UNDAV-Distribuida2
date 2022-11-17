@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "f0c2daf3-4d07-4bf7-8ba3-a5dd54e05dc1",
+		"name": "timeQueryCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16500050"
+	},
+	"item": [
+		{
+			"name": "onlyEpochTime",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "testServicesConnection",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "testBuenosAires",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "testSpain",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

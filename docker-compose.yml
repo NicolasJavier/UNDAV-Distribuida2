@@ -5,11 +5,17 @@ services:
             context: ./
             
             dockerfile: ./srv_time/Dockerfile
+        volumes:
+            - ./srv_time:/home/app
         ports:
             - "50000:50000"
     srv_reader:
         build: 
             context: ./
             dockerfile: ./srv_reader/Dockerfile
+        volumes:
+            - ./srv_reader:/home/app
+        ports:
+            - "5000:5000"
         depends_on: 
             - srv_time

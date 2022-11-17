@@ -1,14 +1,11 @@
-from urllib import request
-import grpc
-import retrieve_time_pb2
-import retrieve_time_pb2_grpc
+from flask import Flask
+from api import blueprintApi
+
+app = Flask('API')
+app.register_blueprint(blueprintApi)
 
 def main():
-    with grpc.insecure_channel('srv_time:50000') as channel:
-        stub = retrieve_time_pb2_grpc.RetrieveTimeStub(channel)
-        request = retrieve_time_pb2.EmptyMessage()
-        result = stub.PingRetrieveTime(request)
-        print(f'GRPC recived: {result.ack}')
+    app.run(debug=True, host='0.0.0.0')
 
 if __name__ == "__main__":
     main()
